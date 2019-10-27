@@ -1,0 +1,10 @@
+spring:
+      rabbitmq:
+            host: product-rabbit-mq-host
+            port: 5672
+            username: guest
+            password: guest
+            connection-timeout.seconds: 5
+            cache.connection.mode: connection
+            cache.connection.size: 10
+
