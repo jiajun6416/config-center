@@ -1,7 +1,7 @@
 spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://192.168.60.11:3306/passport?useUnicode=true&character_set_server=utf8mb4&zeroDateTimeBehavior=convertToNull
+        url: jdbc:mysql://localhost:3306/passport?useUnicode=true&character_set_server=utf8mb4&zeroDateTimeBehavior=convertToNull
         username: abc
         password: eeee!
         type: com.alibaba.druid.pool.DruidDataSource
