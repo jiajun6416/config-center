@@ -1,0 +1,30 @@
+server:
+    servlet:
+        context-path: /userservice-server-app1
+
+environmentId: 4
+
+user-service-exchange: xfm-userServiceExchange
+user.update.exchange: account.update.topic
+
+id:
+    passport: passport.uid
+    device: passport.user.device.id
+
+moon.bp-id:
+    login_rate:
+        app: 34
+        web: 34
+    login_safe:
+        app: 108
+        web: 108
+    reset_pwd:
+        app: 77
+        web: 77
+    register:
+        app: 195
+        web: 195
+
+
+kafka.topic.friendship: friendship-source-app1
+

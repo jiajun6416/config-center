@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver.app1
+        url: jdbc:mysql://localhost:3306/passport?useUnicode=true&character_set_server=utf8mb4&zeroDateTimeBehavior=convertToNull.app1
+        username: abc
+        password: eeee!
+        type: com.alibaba.druid.pool.DruidDataSource
+        druid:
+            initialSize: 3
+            maxActive: 5
+            minIdle: 5
+            maxWait: 30000
+            testOnBorrow: false
+            testOnReturn: false
+            testWhileIdle: true
+            minEvictableIdleTimeMillis: 300000
+            timeBetweenEvictionRunsMillis: 600000
+            validationQuery: 'SELECT 1 FROM DUAL'
+
+mybatis:
+    configuration:
+        auto-mapping-unknown-column-behavior: warning
+        cache-enabled: false
+        local-cache-scope: statement
+        map-underscore-to-camel-case: true
