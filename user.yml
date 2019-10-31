@@ -12,7 +12,6 @@ rabbitmq:
             host: 192.168.3.161
             port: 5672
             username: guest
-            password: guest
             connection-timeout.seconds: 5
             cache.connection.mode: connection
             cache.connection.size: 10
@@ -20,7 +19,6 @@ rabbitmq:
             host: 192.168.3.161
             port: 5672
             username: guest
-            password: guest
             connection-timeout.seconds: 5
             cache.connection.mode: connection
             cache.connection.size: 10
@@ -46,115 +44,6 @@ moon.bp-id:
         app: 195
         web: 195
 
-
-mainstay:
-    application:
-        name: userservice
-        level: 1
-        owners:
-            -   name: jerry.liao
-                email: jerry.liao@ximalaya.com
-            -   name: zhilun.wang
-                email: zhilun.wang@ximalaya.com
-            -   name: yundong.liu
-                email: yundong.liu@ximalaya.com
-    registry:
-        address: 192.168.60.38:2181,192.168.60.39:2181,192.168.60.40:2181
-        timeout: 15000
-        session-timeout: 10000
-    server:
-        group: userservice
-        port: 13327
-        io-size: 4
-        work-size: 500
-        queue-size: 1000
-        refs:
-            - thriftBindMobileServiceFacadeImpl
-            - thriftLoginServiceFacadeImpl
-            - thriftRegisterServiceFacadeImpl
-            - thriftThirdpartyBindServiceImpl
-            - thriftThirdpartyOpenIdServiceImpl
-            - thriftUpdateServiceFacadeImpl
-            - thriftUserServiceFacadeImpl
-            - thriftThirdpartyUserInfoServiceImpl
-            - thriftBanRegisterMobileRecordServiceImpl
-            - thriftAccountDeleteFacadeImpl
-            - thriftAccountComplaintFacadeImpl
-            - thriftAccountComplaintQueryFacadeImpl
-    client-default:
-        io-Size: 10
-        max-connection-size: 100
-        max-acquire-pending-size: 2000
-        timeout: 5000
-    clients:
-        - iface: com.ximalaya.passport.sso.thrift.RemoteSessionService.Iface
-          group: passport-sso
-
-        - iface: com.ximalaya.service.profile.thrift.RemoteUserInfoQueryService.Iface
-          group: profile-proxy
-
-        - iface: com.ximalaya.nickname.api.NicknameService.Iface
-          group: nickname
-
-        - iface: com.ximalaya.service.profile.thrift.RemoteProfileModifyService.Iface
-          group: profile-proxy
-
-        - iface: com.ximalaya.boush.api.thrift.TIdentityService.Iface
-          group: boush
-
-        - iface: com.ximalaya.moon.front.api.thrift.WordFiltersService.Iface
-          group: moon-front-service
-
-        - iface: com.ximalaya.location.business.api.thrift.TLocationService.Iface
-          group: location
-
-        - iface: com.ximalaya.xthirdparty.api.thrift.RemoteThirdpartyService.Iface
-          group: xthirdparty-service
-
-        - iface: com.ximalaya.ad.coupon.rpc.api.thrift.CouponActivityRpcThriftService.Iface
-          group: ad-coupon-rpc
-
-        - iface: com.ximalaya.xthirdparty.api.thrift.RemoteThirdpartyOpenIdService.Iface
-          group: xthirdparty-service
-
-        - iface: com.ximalaya.xthirdparty.api.thrift.RemoteThirdpartyUserInfoService.Iface
-          group: xthirdparty-service
-
-        - iface: com.ximalaya.service.album.api.thrift.IAlbumFacadeHandler.Iface
-          group: album
-
-        - iface: com.ximalaya.xima.accounting.account.query.thrift.api.ThriftSubAccountQueryService.Iface
-          group: xima-account-test
-
-        - iface: com.ximalaya.business.user.subscription.thrift.api.ThriftUserSubscriptionQueryService.Iface
-          group: business-user-subscription
-
-        - iface: com.ximalaya.business.product.permission.thrift.api.ThriftProductPermissionService.Iface
-          group: business-product-permission
-
-        - iface: com.ximalaya.business.payable.authorization.query.thrift.api.ThriftUserPrivilegedAlbumQueryService.Iface
-          group: payable-authorzation
-
-        - iface: com.ximalaya.business.financial.accounting.income.query.thrift.api.ThriftAccumulatedIncomeQueryService.Iface
-          group: financial-accounting-test
-
-        - iface: com.ximalaya.xthirdparty.toolkit.api.thrift.FaceIdentificationService.Iface
-          group: xthirdparty-toolkit-service
-
-        - iface: com.ximalaya.recsys.thrift.gen.TraitService.Iface
-          group: trait-query
-
-        - iface: com.ximalaya.vprofile.thrift.ThriftVprofileService.Iface
-          group: v-profile
-
-        - iface: com.ximalaya.recsys.thrift.impl.RelativeAlbumsThriftService.Iface
-          group: relative-album
-
-        - iface: com.ximalaya.xsms.api.SmsService.Iface
-          group: xsms
-
-        - iface: com.ximalaya.business.pay.trade.gateway.thrift.api.ThriftPayTradeGatewayService.Iface
-          group: pay-trade-gateway
 
 kafka.topic.friendship: friendship-source
 
@@ -185,7 +74,6 @@ spring:
             max-wait: 2000
             min-evictable-idle-time-millis: 300000
             min-idle: 10
-            password: password!
             test-on-borrow: false
             test-on-return: false
             test-while-idle: true
@@ -196,7 +84,6 @@ spring:
     redis:
         host: 192.168.60.47
         port: 6380
-        password: jredis123456
         database: 0
         timeout: 5000ms
         jedis:
